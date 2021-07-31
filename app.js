@@ -15,7 +15,7 @@ function sendEnter(e){
 }
 
 function sendMessage(){
-    let message = textInput.value.replace(/\s/g, '');
+    let message = textInput.value;
     if(!message) return;
     const div = document.createElement('div');
     div.className = 'sendedMessage';
