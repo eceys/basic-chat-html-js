@@ -8,12 +8,15 @@ button.addEventListener('click',sendMessage);
 
 //func
 
-function sendMessage(){
-    let message = textInput.value;
-    if(!message) return;
-    if(message.length === 170){
-
+function sendEnter(e){
+    if(e.keyCode == '13'){
+        sendMessage();
     }
+}
+
+function sendMessage(){
+    let message = textInput.value.replace(/\s/g, '');
+    if(!message) return;
     const div = document.createElement('div');
     div.className = 'sendedMessage';
     div.innerText = `${message}`;
